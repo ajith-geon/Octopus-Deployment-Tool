@@ -1,0 +1,279 @@
+{
+  "ProjectId": "Projects-1",
+  "ChannelId": "Channels-445",
+  "SelectedPackages": [
+    {
+      "ActionName": "ShutdownKoreService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "ShutdownKoreWebApps",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "ShutdownKoreService_x86",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "CleanupAutomation",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "MicrosoftHandle",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "FE Database",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "BE Database",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Scraper Database",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Files Database",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Parser.Implementations",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.TelematicsShared",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.PRiSMProAPI.Services_v4.0",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "PrismProWebClient",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.Listener.TMobile",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.Listener.Optus",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.Listener.EE",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.Listener.VZW",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.DEPTransactionCheck",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SAG",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SAG.SprintCDMA",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SAG.ATT",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SAG.TMO",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SAG.TMORW",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SAG.Verizon",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SAG.Vodafone",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "SIDWebClient (Network Service)",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.PRiSMProAPI.Services v2.0",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.TMobileProxy",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.IridiumEmailGateway",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.SIDLocationServicesEngine",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "SIDLocationServicesListener",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SidExtractEngine",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.CreateRequest",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.ScraperPro -- Consumer",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.TimerService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SimStateTimer.Service",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.SIDPlatformAlertingSystem",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.CdrFileMonitor",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "SMSCClientService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "GPSMS_Stub",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.Parsing_1",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.Parsing_2",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.MessageScheduler",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.ParserAlerting",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.TelematicsAlerting",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.Parsing.RolloverService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.Telematics.Parsing.UsageAccumulationService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.Telematics.Parsing.WriterService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.Iridium.Parsing.Preprocessing",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.Export",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.TMobileService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.ServiceStub.EverythingEverywhere",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.RogersWebServiceStub",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.PCMServiceStub",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "VzWStub",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.OptusService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.CDMAWebService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.VodafoneService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.AT&T",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.JasperService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.SprintStub",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.ServiceStub.KGN",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.KSATTestStub",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.IpManagerRequestProcessor",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Gen3.Support",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "AccountMigrationService",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "Kore.DeviceChangeListener",
+      "Version": "8.69.0.36256-pr4870"
+    },
+    {
+      "ActionName": "KORE.Telematics.Test",
+      "Version": "8.69.0.36256-pr4870"
+    }
+  ],
+  "Version": "8.69.0.36256-pr4870-V4"
+}

@@ -1,0 +1,279 @@
+{
+  "ProjectId": "Projects-1",
+  "ChannelId": "Channels-445",
+  "SelectedPackages": [
+    {
+      "ActionName": "ShutdownKoreService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "ShutdownKoreWebApps",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "ShutdownKoreService_x86",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "CleanupAutomation",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "MicrosoftHandle",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "FE Database",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "BE Database",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Scraper Database",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Files Database",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Parser.Implementations",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.TelematicsShared",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.PRiSMProAPI.Services_v4.0",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "PrismProWebClient",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.Listener.TMobile",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.Listener.Optus",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.Listener.EE",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.Listener.VZW",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.DEPTransactionCheck",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SAG",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SAG.SprintCDMA",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SAG.ATT",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SAG.TMO",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SAG.TMORW",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SAG.Verizon",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SAG.Vodafone",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "SIDWebClient (Network Service)",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.PRiSMProAPI.Services v2.0",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.TMobileProxy",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.IridiumEmailGateway",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.SIDLocationServicesEngine",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "SIDLocationServicesListener",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SidExtractEngine",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.CreateRequest",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.ScraperPro -- Consumer",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.TimerService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SimStateTimer.Service",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.SIDPlatformAlertingSystem",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.CdrFileMonitor",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "SMSCClientService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "GPSMS_Stub",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.Parsing_1",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.Parsing_2",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.MessageScheduler",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.ParserAlerting",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.TelematicsAlerting",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.Parsing.RolloverService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.Telematics.Parsing.UsageAccumulationService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.Telematics.Parsing.WriterService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.Iridium.Parsing.Preprocessing",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.Export",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.TMobileService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.ServiceStub.EverythingEverywhere",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.RogersWebServiceStub",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.PCMServiceStub",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "VzWStub",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.OptusService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.CDMAWebService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.VodafoneService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.AT&T",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.JasperService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.CarrierStub.SprintStub",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.ServiceStub.KGN",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.KSATTestStub",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.IpManagerRequestProcessor",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Gen3.Support",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "AccountMigrationService",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "Kore.DeviceChangeListener",
+      "Version": "8.69.0.36342-epic"
+    },
+    {
+      "ActionName": "KORE.Telematics.Test",
+      "Version": "8.69.0.36342-epic"
+    }
+  ],
+  "Version": "8.69.0.36342-epicV3"
+}
