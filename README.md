@@ -34,3 +34,33 @@ More details available at [Octopus Variables.](https://octopus.com/docs/deployme
 ***
 
 The steps to create Octopus API key is available at : [How to generate Octopus API key?](https://octopus.com/docs/api-and-integration/api/how-to-create-an-api-key)
+
+
+### Listed are the Items that can be made custom depending on requirement.
+***
+
+*  **Steps to be Skipped** : 
+<br> Go to WindowsAppForOctopusDeployment > Form1.cs.
+<br> Locate the Code block.
+![](https://github.com/AjithGeorge/WinForm-Application-for-Octopus-Deployment/blob/master/RefPics/SkipItemsCodeRef.png?raw=true)
+<br> Change the Step-Name and Value to required Ones. The Values can be obtained by monitoring the POST data content of the request by any Network Analyzing tool. [Chrome/Firefox inbuilt Network Monitor will suffice]
+
+***
+
+* **POST Request JSON Templates**:
+<br> Templates are used for the POST request JSON body content.
+<br> The Templates can be fetched dynamically, but as the template hardly changes the dynamic loading of the same will be an overkill. Keeping the templates locally adds to the performance and easy manipulation of data is possible.
+<br>If there happens any change in any Properties/Steps [addition/deletion], updating the same in the local template will be enough. 
+![](https://github.com/AjithGeorge/WinForm-Application-for-Octopus-Deployment/blob/master/RefPics/POST%20Content%20Template.png?raw=true)
+<br>These templates have the structure of the JSON body required for the API request but don't have the values. [Only Properties are defined in the template, values are entered through the code]
+
+***
+* **Parsing JSON**:
+<br>Locate the code block
+![](https://github.com/AjithGeorge/WinForm-Application-for-Octopus-Deployment/blob/master/RefPics/Create%20Release%20Post%20Data%20Input.png?raw=true)
+<br>This is the step where the Json template is taken as input and the values are inserted.
+<br>Here the user input values are assigned to the Json Property Values.
+![](https://github.com/AjithGeorge/WinForm-Application-for-Octopus-Deployment/blob/master/RefPics/Create%20Release%20POST%20Json%20Content%20Manipulation.png?raw=true) 
+The final Json with the user given values and specifics are saved as a new file _"CreateReleasePostData.Json"_. 
+<br>The contents of this file is converted to string and is passed as the POST method body.
+<br>The Same procedure is used for the Deploy Release POST data too.
