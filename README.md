@@ -1,5 +1,5 @@
 ## Welcome to the WinForm-Application-for-Octopus-Deployment wiki!
-##Pending Updates, New Relese Version_4.0.1 Released with more customized features
+## Pending Updates, New Relese Version_4.0.1 Released with more customized features
 
 ### 1. Application UI Preview
 ![](https://github.com/AjithGeorge/WinForm-Application-for-Octopus-Deployment/blob/master/UI%20Preview.png?raw=true)
