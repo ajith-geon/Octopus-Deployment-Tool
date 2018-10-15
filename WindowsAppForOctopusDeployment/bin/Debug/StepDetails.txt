@@ -1,0 +1,9 @@
+﻿03ddae2e-d88e-4bd6-9b58-8df48ee7966a,Step 21: KORE.Listener.Telstra
+fcf47fa3-93c7-434b-9357-542a370e3ad5,Step 85: Kore.Export
+10101eff-12ec-4960-b9b0-cae3a347b02b,Step 86: ExportServiceCLI
+52abdbdb-350c-419f-a7af-8b957cd6d60f,Step 88: KORE.CarrierStub.TelstraWebService
+dc456c87-b272-4835-86f5-69247fdc3be9,Step 103: Kore.SAG.Zendesk
+a2d44259-9090-4745-90cd-59bb17e56bd3,Step 108: Kore.NetworkStatusEngine
+81ea7e0d-4d7b-4480-b213-bc4866f08e43,Step 109: KORE.Telematics.Test
+58faf248-a813-42e2-ace4-5bfd15407311,Step 111: KORE.CarrierStub.StarGateWebService
+4d240328-348f-4beb-b03c-a931f039bcc3,Step 112: Kore.Telematics.Parsing.QuarantineService

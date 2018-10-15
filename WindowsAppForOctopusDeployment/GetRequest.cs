@@ -13,6 +13,7 @@ namespace WindowsAppForOctopusDeployment
             string baseurl = Baseurl;
             string APIKey = apikey;
             string endpoint = Endpoint;
+            ServicePointManager.ServerCertificateValidationCallback =(object a, System.Security.Cryptography.X509Certificates.X509Certificate b, System.Security.Cryptography.X509Certificates.X509Chain c, System.Net.Security.SslPolicyErrors d) => { return true; };
             WebRequest req = WebRequest.Create(baseurl + endpoint);
             req.Method = "GET";
             req.Headers["X-Octopus-ApiKey"] = APIKey;

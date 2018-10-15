@@ -37,13 +37,73 @@ namespace WindowsAppForOctopusDeployment.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool RememberMe {
             get {
                 return ((bool)(this["RememberMe"]));
             }
             set {
                 this["RememberMe"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SaveConfiguration {
+            get {
+                return ((bool)(this["SaveConfiguration"]));
+            }
+            set {
+                this["SaveConfiguration"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ChannelSelectedVal {
+            get {
+                return ((string)(this["ChannelSelectedVal"]));
+            }
+            set {
+                this["ChannelSelectedVal"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ChannelSelectedName {
+            get {
+                return ((string)(this["ChannelSelectedName"]));
+            }
+            set {
+                this["ChannelSelectedName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EnvironmentName {
+            get {
+                return ((string)(this["EnvironmentName"]));
+            }
+            set {
+                this["EnvironmentName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EnvironmentValue {
+            get {
+                return ((string)(this["EnvironmentValue"]));
+            }
+            set {
+                this["EnvironmentValue"] = value;
             }
         }
     }

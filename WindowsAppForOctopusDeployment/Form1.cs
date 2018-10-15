@@ -5,20 +5,21 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 using System.Diagnostics;
-
+using Newtonsoft.Json.Linq;
 
 namespace WindowsAppForOctopusDeployment
 {
     public partial class Form1 : Form
     {
         public string user;
-        public string baseurl = "http://172.30.100.100/api/";
+        public string baseurl = "https://octopus.ksg.int/api/";
         public string APIKey;
         public string endpoint;
         public string ChannelSelected;
         public string EnvironmentSelected;
         public string ReleaseSelected;
         public string VersionSelected;
+        public string skip;
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace WindowsAppForOctopusDeployment
 
             //Reading details from User Config file.
             chkboxRememberMe.Checked = Properties.Settings.Default.RememberMe;
+            ChkBoxRmbrCnfg.Checked = Properties.Settings.Default.SaveConfiguration;
 
 
             rtbConsole.Text =Environment.NewLine+Environment.NewLine+ "<<<<<--------Click On the Populate Button to get data in the Dropdown boxes-------->>>>>>";
@@ -34,12 +36,38 @@ namespace WindowsAppForOctopusDeployment
             txtbxDSU.Text = "true";
             txtbxDBR.Text = "none";
             txtbxUGF.Text = "true";
+            
 
             if (Properties.Settings.Default.RememberMe)
             {
                 txtboxPassword.Text = Properties.Settings.Default.Password;
                 APIKey = txtboxPassword.Text;
             }
+
+            if (Properties.Settings.Default.SaveConfiguration)
+            {
+                cmbChannels.Text = Properties.Settings.Default.ChannelSelectedName;
+                ChannelSelected = Properties.Settings.Default.ChannelSelectedVal;
+                cmbEnvironments.Text = Properties.Settings.Default.EnvironmentName;
+                EnvironmentSelected = Properties.Settings.Default.EnvironmentValue;
+            }
+
+            checkedListBox1.DisplayMember = "StepName";
+            checkedListBox1.ValueMember = "Value";
+            using (StreamReader sr = File.OpenText("StepDetails.txt"))
+            {
+                string line;
+                int lineNumber = 0;
+                while ((line = sr.ReadLine()) != null)
+                
+                {
+                    string Name = line.Split(',')[1];
+                    string Value = line.Split(',')[0];
+                    checkedListBox1.Items.Insert(lineNumber, new SkipItems { StepName = Name, RealValue = Value });
+                    lineNumber++;
+                }
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,10 +82,7 @@ namespace WindowsAppForOctopusDeployment
             Properties.Settings.Default.Password = txtboxPassword.Text;      
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
 
         void Form1_FormClosing(object sender, FormClosingEventArgs e)
         { 
@@ -76,7 +101,26 @@ namespace WindowsAppForOctopusDeployment
                     Properties.Settings.Default.RememberMe = false;
                     Properties.Settings.Default.Save();
                 }
-            
+
+                if (ChkBoxRmbrCnfg.Checked)
+                {
+                    Properties.Settings.Default.SaveConfiguration = true;
+                    Properties.Settings.Default.ChannelSelectedName = cmbChannels.Text.ToString();
+                    Properties.Settings.Default.ChannelSelectedVal = ChannelSelected;
+                    Properties.Settings.Default.EnvironmentName = cmbEnvironments.Text.ToString();
+                    Properties.Settings.Default.EnvironmentValue = EnvironmentSelected;
+                    Properties.Settings.Default.Save();
+                }
+
+            if (!ChkBoxRmbrCnfg.Checked)
+            {
+                Properties.Settings.Default.SaveConfiguration = false;
+                Properties.Settings.Default.ChannelSelectedName =null;
+                Properties.Settings.Default.ChannelSelectedVal = null;
+                Properties.Settings.Default.EnvironmentName = null;
+                Properties.Settings.Default.EnvironmentValue =null;
+                Properties.Settings.Default.Save();
+            }
 
         }
         // Toggle Password Visibility Functionality
@@ -96,22 +140,23 @@ namespace WindowsAppForOctopusDeployment
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                endpoint = "channels";
-
+                endpoint = "channels/all";
+                
                 GetRequest Channel = new GetRequest();
 
                 string responseFromServer = Channel.AllPopulate(APIKey, baseurl,endpoint);
-                ChannelDetails.RootObject Obj = JsonConvert.DeserializeObject<ChannelDetails.RootObject>(responseFromServer);
+                var Obj = JsonConvert.DeserializeObject<List<EnvironmentDetails.Item>>(responseFromServer);
 
                 cmbChannels.DataBindings.Clear();
                 cmbChannels.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 cmbChannels.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-                cmbChannels.DataSource = Obj.Items;
+                cmbChannels.DataSource = Obj;
                 cmbChannels.DisplayMember = "Name";
                 cmbChannels.ValueMember = "ID";
                 cmbChannels.Text = "--Select--";
-                rtbConsole.Text = "Channels Populated Successfully!";            
+                rtbConsole.Text = "Channels Populated Successfully!";
+                ChannelSelected = null;
             }
 
             catch (WebException ex)
@@ -234,33 +279,81 @@ namespace WindowsAppForOctopusDeployment
                 VersionSelected = txtbxPackageVersion.Text;
                 try
                 {
+
                     endpoint = "releases";
+                    ServicePointManager.ServerCertificateValidationCallback = (object a, System.Security.Cryptography.X509Certificates.X509Certificate b, System.Security.Cryptography.X509Certificates.X509Chain c, System.Net.Security.SslPolicyErrors d) => { return true; };
                     WebRequest req = WebRequest.Create(baseurl + endpoint);
                     req.Method = "POST";
                     req.Headers["X-Octopus-ApiKey"] = APIKey;
                     req.ContentType = "application/json";
-                    
-                    string json = File.ReadAllText("CreateReleaseTemplate.json");
-                    dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-                    int i = 0;
-                    while (i < 68)
-                    {
-                        jsonObj["SelectedPackages"][i]["Version"] = VersionSelected;
-                        i++;
-                    }
-                    jsonObj["ChannelId"] = ChannelSelected;
-                    jsonObj["Version"] = txtbxReleaseName.Text;
 
-                    
-                    string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
-                    File.WriteAllText("CreateReleasePostData.json", output);
-                    string json1 = File.ReadAllText("CreateReleasePostData.json");
-                    rtbConsole.Text = "Finding Template and Creating Release!";
-                    using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+                    if (ChannelSelected == "Channels-621")
                     {
-                        streamWriter.Write(json1);
-                        streamWriter.Flush();
-                        streamWriter.Close();
+                        string json = File.ReadAllText("CreateReleaseTemplateChannelNetStat.json");
+
+                       /* var obj= JObject.Parse(json);
+                        var array = obj.GetValue("SelectedPackages") as JArray;
+                        var newMember ="{"+"ActionName"+":" +"CleanupAutomation"+","+"Version"+":"+ ""+"}";
+                        var add = JObject.Parse(newMember);
+                        array.Add(add);*/
+
+
+                        dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+
+                        int i = 0;
+                        foreach (JObject step in jsonObj["SelectedPackages"])
+
+                        {
+                            jsonObj["SelectedPackages"][i]["Version"] = VersionSelected;
+                            i++;
+                        }
+
+                        jsonObj["ChannelId"] = ChannelSelected;
+                        jsonObj["Version"] = txtbxReleaseName.Text;
+
+
+                        string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+
+                        File.WriteAllText("CreateReleasePostData.json", output);
+                        string json1 = File.ReadAllText("CreateReleasePostData.json");
+
+                        rtbConsole.Text = "Finding Template and Creating Release!";
+                        using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+                        {
+                            streamWriter.Write(json1);
+                            streamWriter.Flush();
+                            streamWriter.Close();
+                        }
+                    }
+
+                    else
+                    {
+                        string json = File.ReadAllText("CreateReleaseTemplate.json");
+
+                        dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+
+                        int i = 0;
+                        foreach (JObject step in jsonObj["SelectedPackages"])
+
+                        {
+                            jsonObj["SelectedPackages"][i]["Version"] = VersionSelected;
+                            i++;
+                        }
+                        jsonObj["ChannelId"] = ChannelSelected;
+                        jsonObj["Version"] = txtbxReleaseName.Text;
+
+                        string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+
+                        File.WriteAllText("CreateReleasePostData.json", output);
+                        string json1 = File.ReadAllText("CreateReleasePostData.json");
+
+                        rtbConsole.Text = "Finding Template and Creating Release!";
+                        using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+                        {
+                            streamWriter.Write(json1);
+                            streamWriter.Flush();
+                            streamWriter.Close();
+                        }
                     }
                     HttpWebResponse resp = req.GetResponse() as HttpWebResponse;
 
@@ -294,14 +387,13 @@ namespace WindowsAppForOctopusDeployment
                 {
                     Cursor.Current = Cursors.WaitCursor;
                     endpoint = "deployments";
+                    ServicePointManager.ServerCertificateValidationCallback = (object a, System.Security.Cryptography.X509Certificates.X509Certificate b, System.Security.Cryptography.X509Certificates.X509Chain c, System.Net.Security.SslPolicyErrors d) => { return true; };
                     WebRequest req = WebRequest.Create(baseurl + endpoint);
                     req.Method = "POST";
                     req.Headers["X-Octopus-ApiKey"] = APIKey;
                     req.ContentType = "application/json";
-
                     string json = File.ReadAllText("DeployReleaseTemplate.json");
                     dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-
                     jsonObj["FormValues"]["290d3b75-9591-faa9-13c3-14c06ff0bed5"] = txtbxBDL.Text.ToLower();
                     jsonObj["FormValues"]["9834a393-a509-8cde-68cb-affb5cae972e"] = txtbxDSU.Text.ToLower();
                     jsonObj["FormValues"]["f910eadf-b6e3-25ff-a9b4-24ae30a2e502"] = txtbxDBR.Text.ToLower();
@@ -310,25 +402,58 @@ namespace WindowsAppForOctopusDeployment
                     jsonObj["ReleaseId"] = ReleaseSelected;
                     jsonObj["EnvironmentId"] = EnvironmentSelected;
 
+                    List<string> steps = new List<string>();
 
+                    foreach (SkipItems skipitem in checkedListBox1.CheckedItems)
+
+                    {
+                        steps.Add(skipitem.RealValue);
+                    }
+                    string skip = "[" + "\"" + string.Join("\"" + "," + "\"", steps) + "\"" + "]";
 
                     string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
                     File.WriteAllText("DeployReleasePostData.json", output);
-                    string json1 = File.ReadAllText("DeployReleasePostData.json");
-                    using (var streamWriter = new StreamWriter(req.GetRequestStream()))
-                    {
-                        streamWriter.Write(json1);
-                        streamWriter.Flush();
-                        streamWriter.Close();
-                    }
-                    HttpWebResponse resp = req.GetResponse() as HttpWebResponse;
 
-                    StreamReader reader = new StreamReader(resp.GetResponseStream());
-                    
-                    rtbConsole.Text = Environment.NewLine + "Deployment Started Successfully!"+Environment.NewLine+Environment.NewLine;
-                    rtbConsole.Text += reader.ReadToEnd();
-                    ProcessStartInfo sInfo = new ProcessStartInfo("http://172.30.100.100/app#/");
-                    Process.Start(sInfo);
+                    if (checkedListBox1.CheckedItems.Count!=0)
+                    {
+                        string json1 = File.ReadAllText("DeployReleasePostData.json").TrimEnd('}') + "," + "\"SkipActions\"" + ":" + skip + "}";
+
+                        using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+                        {
+                            streamWriter.Write(json1);
+                            streamWriter.Flush();
+                            streamWriter.Close();
+                        }
+                        HttpWebResponse resp = req.GetResponse() as HttpWebResponse;
+
+                        StreamReader reader = new StreamReader(resp.GetResponseStream());
+
+                        rtbConsole.Text = Environment.NewLine + "Deployment Started Successfully!" + Environment.NewLine + Environment.NewLine;
+                        rtbConsole.Text += reader.ReadToEnd();
+                        ProcessStartInfo sInfo = new ProcessStartInfo("https://octopus.ksg.int/app#/");
+                        Process.Start(sInfo);
+                    }
+                
+                    else
+                    {
+                        string json1 = File.ReadAllText("DeployReleasePostData.json");
+
+                        rtbConsole.Text = json1;
+                        using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+                        {
+                            streamWriter.Write(json1);
+                            streamWriter.Flush();
+                            streamWriter.Close();
+                        }
+                        HttpWebResponse resp = req.GetResponse() as HttpWebResponse;
+
+                        StreamReader reader = new StreamReader(resp.GetResponseStream());
+
+                        rtbConsole.Text = Environment.NewLine + "Deployment Started Successfully!" + Environment.NewLine + Environment.NewLine;
+                        rtbConsole.Text += reader.ReadToEnd();
+                        ProcessStartInfo sInfo = new ProcessStartInfo("https://octopus.ksg.int/app#/");
+                        Process.Start(sInfo);
+                    }
                 }
                 catch (WebException ex)
                 {
@@ -336,6 +461,7 @@ namespace WindowsAppForOctopusDeployment
                     using (var reader = new StreamReader(stream))
                     {
                         rtbConsole.Text = reader.ReadToEnd();
+
                     }
                 }
             }
@@ -346,7 +472,27 @@ namespace WindowsAppForOctopusDeployment
 
 
         }
-//---------------------------------------------------------------------------------------------------------------
+
+        private void chkbxSelectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkbxSelectAll.Checked)
+            {
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    checkedListBox1.SetItemChecked(i, true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    checkedListBox1.SetItemChecked(i, false);
+                }
+            }
+        }
+
+
+        //---------------------------------------------------------------------------------------------------------------
 
     }
 }

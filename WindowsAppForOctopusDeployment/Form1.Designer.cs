@@ -57,6 +57,10 @@
             this.txtbxDSU = new System.Windows.Forms.TextBox();
             this.txtbxDBR = new System.Windows.Forms.TextBox();
             this.txtbxUGF = new System.Windows.Forms.TextBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.chkbxSelectAll = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ChkBoxRmbrCnfg = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtboxPassword
@@ -87,7 +91,6 @@
             this.chkboxRememberMe.TabIndex = 4;
             this.chkboxRememberMe.Text = "Remember Me";
             this.chkboxRememberMe.UseVisualStyleBackColor = true;
-            this.chkboxRememberMe.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label3
             // 
@@ -309,12 +312,54 @@
             this.txtbxUGF.Size = new System.Drawing.Size(235, 20);
             this.txtbxUGF.TabIndex = 33;
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(605, 36);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(330, 589);
+            this.checkedListBox1.TabIndex = 34;
+            // 
+            // chkbxSelectAll
+            // 
+            this.chkbxSelectAll.AutoSize = true;
+            this.chkbxSelectAll.Location = new System.Drawing.Point(865, 10);
+            this.chkbxSelectAll.Name = "chkbxSelectAll";
+            this.chkbxSelectAll.Size = new System.Drawing.Size(70, 17);
+            this.chkbxSelectAll.TabIndex = 37;
+            this.chkbxSelectAll.Text = "Select All";
+            this.chkbxSelectAll.UseVisualStyleBackColor = true;
+            this.chkbxSelectAll.CheckedChanged += new System.EventHandler(this.chkbxSelectAll_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(602, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Steps to be Skipped:";
+            // 
+            // ChkBoxRmbrCnfg
+            // 
+            this.ChkBoxRmbrCnfg.AutoSize = true;
+            this.ChkBoxRmbrCnfg.Location = new System.Drawing.Point(50, 327);
+            this.ChkBoxRmbrCnfg.Name = "ChkBoxRmbrCnfg";
+            this.ChkBoxRmbrCnfg.Size = new System.Drawing.Size(116, 17);
+            this.ChkBoxRmbrCnfg.TabIndex = 39;
+            this.ChkBoxRmbrCnfg.Text = "Save Configuration";
+            this.ChkBoxRmbrCnfg.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(667, 643);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(967, 662);
+            this.Controls.Add(this.ChkBoxRmbrCnfg);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.chkbxSelectAll);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.txtbxUGF);
             this.Controls.Add(this.txtbxDBR);
             this.Controls.Add(this.txtbxDSU);
@@ -347,7 +392,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Octopus Deployment Tool V2";
+            this.Text = "Octopus Deployment Tool v4.0.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -383,6 +428,10 @@
         private System.Windows.Forms.TextBox txtbxDSU;
         private System.Windows.Forms.TextBox txtbxDBR;
         private System.Windows.Forms.TextBox txtbxUGF;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckBox chkbxSelectAll;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox ChkBoxRmbrCnfg;
     }
 }
 

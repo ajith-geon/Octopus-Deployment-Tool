@@ -1,0 +1,88 @@
+﻿245ac653-66a7-4486-91f7-60696168438f,1. Environment Prerequisite Check
+c0f9f372-cf83-425f-a313-4326e86984a4,2.1. ShutdownKoreService
+a4faaaf5-a045-4db3-bc08-a86400554119,2.2. ShutdownKoreWebApps
+1b974528-dfd7-4a2e-a8d6-5bde5be2fd8b,4. Stop All Gen3 Parsing Services
+dfa123d3-cea7-4087-9ab2-b4ead89b835e,7. MicrosoftHandle
+d38b365f-b979-477d-b147-248478d4830d,8.2. FE Database
+9277bf51-7a58-4126-991e-0cc3df1e32e4,9.2. BE Database
+e407006f-9c61-441a-8556-04f621eda880,10. Scraper Database
+b82109aa-7a10-4ffa-8c90-5d6aab107c6e,11. Files Database
+6cdefb52-28b4-47d7-a4c7-c27be18c8a9e,12. Parser.Implementations
+ea051ac5-468b-4500-9dc7-f9e70d0c3b93,13.1. Kore.TelematicsShared
+342d8f8b-047a-4e83-8bfa-3300b92d3c5f,13.2. IIS AppPool - Update Property TelShared
+bad5694a-4814-4877-916c-52bc15571106,14.1. Create_APIWebsite_ParentFolder
+388d5664-e5b6-4889-98ef-533881046660,14.2. IIS AppPool - Create PrismProAPI (CLR v4.0)
+636dc58c-f5fc-4c7b-9b0c-19573f8d984a,14.3. IIS Website - Delete APIWebsite
+6084d56a-5859-47ae-9709-4a169243f0ea,14.4. Create_PrismProAPI_ParentWebsite
+a1800179-13b4-4580-9dde-82eee865ff96,15.1. Kore.PRiSMProAPI.Services_v4.0
+2cd8cb4d-9381-4b1d-9a7a-8203e4aed818,15.2. IIS Application - Create API4
+711a043d-5133-46f4-afee-7297c8b8f778,16.2. PrismProWebClient
+fcd75b12-0fef-42db-96f4-91d4c6fd2ccc,19. Stop Scraper Scheduled Tasks
+7c678909-507d-4729-8af9-57d710b486cd,20. KORE.Listener.TMobile
+03ddae2e-d88e-4bd6-9b58-8df48ee7966a,21. KORE.Listener.Telstra
+28c0e929-00fc-44f0-b364-b3efcaa4a259,23. KORE.Listener.Optus
+db080628-ea07-455b-98a5-9b6e4932d2c5,24.1. Kore.Listener.EE
+153ccf7d-7f80-4364-ad4a-e5a5195f006c,24.2. IIS AppPool - Update Property EE Listener
+eb6830c9-04ec-4649-840a-af9c36e3a7ea,25. Kore.Listener.VZW
+ce1d6608-feaa-4422-897b-7e2d40c4e833,26. Kore.DEPTransactionCheck
+6a9dca49-6475-4373-9a5f-109b0acf3859,27. Kore.SAG
+4620545a-c6b3-4134-994b-6e8b51630d99,28. Kore.SAG.SprintCDMA
+b1f3aceb-5ee8-4d3c-84e1-c01baeabd5ff,29. Kore.SAG.ATT
+2e7c3cd7-3e96-41a9-b441-fbdaa191571e,30. Kore.SAG.TMO
+f67cbea3-9402-4240-b6c6-7e2d833fc410,31. Kore.SAG.TMORW
+5183a212-6a32-43dc-869a-c48882f6b03a,32. Kore.SAG.Verizon
+f793a2ff-c667-4a10-ab48-c958bf78573c,33. Kore.SAG.Vodafone
+ab08b12a-73fe-4cbe-a7bf-ac4e37e27a10,37. SIDWebClient (Network Service)
+20eb68e7-d2bc-424a-bf9c-50bcbeadbede,38. Kore.PRiSMProAPI.Services v2.0
+21e038bc-8b91-47e5-b58e-64d26ece5ded,39. KORE.TMobileProxy
+fa4f2d18-2d4c-495c-9529-38ef100f1295,40.1. KORE.IridiumEmailGateway
+29502755-a2cc-44a8-884d-f68a3bc61edf,40.2. IIS AppPool - Update Property IridiumGatewayService
+feb1c05f-6ada-45aa-b7ab-4ea5a3b7bab6,41. KORE.SIDLocationServicesEngine
+8f7eba30-4a41-4cc6-ad3c-cdc35d2c5fc2,42. SIDLocationServicesListener
+aeee1841-1a86-471c-a3db-1d5860b39942,43. Kore.SidExtractEngine
+aa0d3fa5-d1d2-415a-b047-cb613370e484,44. Kore.CreateRequest
+6d91d02a-92d8-4847-9cbe-26c54a4b89e9,47. KORE.ScraperPro -- Consumer
+663a0477-e96d-4ed6-b93d-015dcec931a0,48. KORE.TimerService
+8b3dc062-0b46-4b81-9657-afa56a3d0b10,49. Kore.SimStateTimer.Service
+c15ae85d-548f-42aa-8b35-aac7e4ae3bd0,50. Kore.SIDPlatformAlertingSystem
+11965e07-1aea-4175-8843-b76003f61571,53. Kore.CdrFileMonitor
+434de2c5-3aa1-4352-bb42-460427ccaf23,54. SMSCClientService
+8d525f10-264f-4b38-9845-b2affcfeab57,55. GPSMS_Stub
+bd5f940f-bbc7-4894-9b4d-3c57df89e345,58. Kore.Parsing_1
+44d2174f-d029-4c77-b5c9-3f94c472f5d2,59. Kore.Parsing_2
+3071e60c-2576-4bb3-abcf-25d8c1ba2a44,67. Kore.MessageScheduler
+d8cfe17c-6f76-4233-8778-aff468e08cd6,72. Kore.ParserAlerting
+fa4a5b9a-897f-4096-a889-ab81113b6357,73. Kore.TelematicsAlerting
+e9c03cfb-cdde-4a70-9ac6-3421a80f1173,75. Kore.Parsing.RolloverService
+f453dbed-18f6-472d-9a7c-612c0150257b,78. KORE.Telematics.Parsing.UsageAccumulationService
+7f671907-aaf5-4fc9-a48e-9afaf3fb5f7d,79. Kore.Telematics.Parsing.WriterService
+de949504-5a07-497f-a5da-a4e948acaf4d,83. Kore.Iridium.Parsing.Preprocessing
+fcf47fa3-93c7-434b-9357-542a370e3ad5,85. Kore.Export
+52abdbdb-350c-419f-a7af-8b957cd6d60f,86. ExportServiceCLI
+694b95c2-004d-4a50-a8a7-24dd4f063f72,87. KORE.CarrierStub.TMobileService
+dc456c87-b272-4835-86f5-69247fdc3be9,88. KORE.CarrierStub.TelstraWebService
+8914ca7a-e3c7-4cf2-888f-e4fd54e8cd1a,89. KORE.ServiceStub.EverythingEverywhere
+2600e53a-7f72-4909-8b45-af890b80609c,90.1. Kore.RogersWebServiceStub
+a35bf184-6186-424c-a209-ee0f0605d582,90.2. IIS AppPool - Update Property Rogers
+9853c771-87f5-4883-aad8-16b04790ff4f,91. Kore.PCMServiceStub
+623c1890-bf33-4da1-aa87-d80f6cd38f45,92. VzWStub
+dbd42029-02fd-49e2-8fc7-798f229f67bb,93. KORE.CarrierStub.OptusService
+c23a2012-35f7-44f7-8788-b85a20aedc95,94. KORE.CDMAWebService
+05536efa-46f4-4223-9807-086a40568549,95. KORE.CarrierStub.VodafoneService
+463d148b-6f17-4fee-b94a-ac5fce428615,96.1. KORE.CarrierStub.AT&T
+86d46b67-7fa5-4364-af9b-5dd4abdad5ef,96.2. IIS AppPool - Update Property
+2d5addf5-e18b-43d6-96bb-93ed2f52a6dd,97. KORE.CarrierStub.JasperService
+a6c9028e-2724-45b1-aecb-aa6c25f4b0ed,98. KORE.CarrierStub.SprintStub
+6d958bad-95c8-4766-8b9f-b6b3b67020ff,99. KORE.ServiceStub.KGN
+ded9a737-0164-4b79-9955-da66c87e621f,101. KORE.KSATTestStub
+9d763ae8-2c66-4dc0-8874-74bfff5dbf4e,102. KORE.IpManagerRequestProcessor
+10101eff-12ec-4960-b9b0-cae3a347b02b,103. Kore.SAG.Zendesk
+5742226f-0694-4936-8e58-59232d64d06c,104. Gen3.Support
+ab766a93-ef49-4c8b-9743-9a974e49fb08,106.1. AccountMigrationService
+1a7f1207-131a-4fb1-93a5-5609ff2fd684,106.2. IIS AppPool - Create AccountMigrationService
+51384bf2-2c59-49be-af6b-97babc44fe07,107. Kore.DeviceChangeListener
+a2d44259-9090-4745-90cd-59bb17e56bd3,108. Kore.NetworkStatusEngine
+81ea7e0d-4d7b-4480-b213-bc4866f08e43,109.1. KORE.Telematics.Test
+79bcb603-09ee-4951-9a2b-5e20b116058c,109.3. KORE.AutomationScripts
+58faf248-a813-42e2-ace4-5bfd15407311,111. KORE.CarrierStub.StarGateWebService
+4d240328-348f-4beb-b03c-a931f039bcc3,112. Kore.Telematics.Parsing.QuarantineService
